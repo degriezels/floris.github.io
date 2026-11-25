@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101510" />
+    <meta name="description" content="Speel een potje Snake in Floris' mini-arcade." />
+    <title>Snake — Mini Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Mini Arcade startpagina">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>MINI ARCADE</span>
+        </a>
+        <span class="topbar-note"><span class="live-dot" aria-hidden="true"></span> Speel meteen</span>
+      </header>
+
+      <section class="game-layout" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">KLASSIEKER, NIEUW JASJE</p>
+          <h1 id="page-title">Snake<span class="title-dot">.</span></h1>
+          <p class="intro-copy">Een hapje, een stukje langer. Hoe lang houd jij het vol?</p>
+          <div class="scoreboard" aria-label="Scores">
+            <div class="score-card current-score">
+              <span class="score-label">SCORE</span>
+              <strong id="score" aria-live="polite" aria-atomic="true">00</strong>
+            </div>
+            <div class="score-card">
+              <span class="score-label">BESTE SCORE</span>
+              <strong id="best-score">00</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <div class="game-topline">
+            <div class="game-name"><span class="snake-icon" aria-hidden="true">●</span> ARCADE / 01</div>
+            <div id="game-status" class="status-pill" role="status" aria-live="polite">
+              <span class="status-indicator" aria-hidden="true"></span><span id="status-text">Klaar om te spelen</span>
+            </div>
+          </div>
+
+          <div class="board-wrap">
+            <canvas id="game-board" width="600" height="600" aria-label="Snake speelveld. Gebruik de pijltjestoetsen of WASD om de slang te besturen." aria-describedby="instructions">
+              Je browser ondersteunt het canvas-speelveld niet. Gebruik een recente browser om Snake te spelen.
+            </canvas>
+            <div id="board-overlay" class="board-overlay">
+              <div class="overlay-icon" aria-hidden="true">↗</div>
+              <p id="overlay-title">Klaar voor een rondje?</p>
+              <span id="overlay-copy">Druk op start en pak het eerste hapje.</span>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button id="start-button" class="button button-primary" type="button">
+              <span aria-hidden="true">▶</span> Start spel
+            </button>
+            <button id="pause-button" class="button button-secondary" type="button" disabled>
+              <span aria-hidden="true">Ⅱ</span> Pauze
+            </button>
+            <button id="restart-button" class="button button-quiet" type="button" aria-label="Start opnieuw">
+              <span aria-hidden="true">↻</span><span class="restart-label">Opnieuw</span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="how-to" id="instructions" aria-label="Speluitleg en bediening">
+          <div class="how-to-heading"><span class="how-to-icon" aria-hidden="true">⌁</span><h2>Hoe speel je?</h2></div>
+          <p>Verzamel de lichtgevende hapjes en groei zo lang mogelijk. Raak de muur of jezelf niet!</p>
+          <div class="key-guide">
+            <span class="guide-label">TOETSENBORD</span>
+            <div class="keys" aria-label="Pijltjestoetsen of W, A, S en D">
+              <kbd>↑</kbd><span class="key-row"><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span>
+            </div>
+            <span class="or-label">of</span>
+            <div class="wasd-keys" aria-hidden="true"><kbd>W</kbd><span><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></div>
+          </div>
+        </aside>
+
+        <section class="touch-panel" aria-label="Aanraakbediening">
+          <p class="touch-label">AANRAAKBEDIENING</p>
+          <div class="d-pad">
+            <button class="direction-button up" type="button" data-direction="up" aria-label="Omhoog">↑</button>
+            <button class="direction-button left" type="button" data-direction="left" aria-label="Links">←</button>
+            <button class="direction-button down" type="button" data-direction="down" aria-label="Omlaag">↓</button>
+            <button class="direction-button right" type="button" data-direction="right" aria-label="Rechts">→</button>
+          </div>
+          <p class="touch-hint">Tik op een pijl of veeg over het speelveld</p>
+        </section>
+      </section>
+
+      <footer class="footer"><span>Gemaakt om even tussendoor te spelen.</span><span>✳ <span id="footer-year"></span> MINI ARCADE</span></footer>
+    </main>
+  </body>
+</html>
